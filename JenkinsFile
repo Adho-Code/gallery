@@ -3,7 +3,6 @@ pipeline {
   tools {
     nodejs'Nodejs'
   }
-//clone repo
   stages {
     stage('clone repo') {
       steps {
@@ -11,15 +10,15 @@ pipeline {
         git 'https://github.com/Adho-Code/gallery.git'
       }
     }
-    //dependencies
-      stage('install dependancies') {
+    
+    stage('install dependancies') {
         steps {
             echo 'install dependancies'
             sh 'npm install'
       }
       }
-      //test
-      stage('test') {
+     
+    stage('test') {
         steps {
             echo 'running test'
             sh 'npm test'
@@ -28,3 +27,8 @@ pipeline {
   }
  
 }
+
+
+
+
+
