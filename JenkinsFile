@@ -15,13 +15,13 @@ pipeline {
           echo 'install dependancies'
           sh 'npm install'
       }
-      }
+    }
     stage('test') {
         steps {
           echo 'running test'
           sh 'npm test'
       }
-      }
+    }
   }
  
 }
