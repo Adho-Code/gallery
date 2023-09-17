@@ -13,21 +13,18 @@ pipeline {
     }
     //dependencies
       stage('install dependancies') {
-      steps {
-        echo 'install dependancies'
-        sh 'npm install'
+        steps {
+            echo 'install dependancies'
+            sh 'npm install'
       }
       }
       //test
       stage('test') {
-      steps {
-        echo 'running test'
-        sh 'npm test'
+        steps {
+            echo 'running test'
+            sh 'npm test'
       }
       }
-
-
-     
   }
  
 }
