@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools {
-    nodejs 'NodeJS'
+    nodejs'Nodejs'
   }
 //clone repo
   stages {
@@ -26,14 +26,7 @@ pipeline {
       }
       }
 
-      // deployment
 
-      stage('deploy'){
-        steps {
-            echo 'running deployment to heroku'
-        }
-      }
-    
      
   }
  
