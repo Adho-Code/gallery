@@ -10,18 +10,16 @@ pipeline {
         git 'https://github.com/Adho-Code/gallery.git'
       }
     }
-    
     stage('install dependancies') {
         steps {
-            echo 'install dependancies'
-            sh 'npm install'
+          echo 'install dependancies'
+          sh 'npm install'
       }
       }
-     
     stage('test') {
         steps {
-            echo 'running test'
-            sh 'npm test'
+          echo 'running test'
+          sh 'npm test'
       }
       }
   }
