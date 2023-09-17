@@ -11,9 +11,11 @@ let image = require('./routes/image');
 require('dotenv').config();
 
 // Connect to the MongoDB database
-const mongodb_url = process.env.MONGODB_URL;
-mongoose.connect(mongodb_url, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
-  if (err) console.error(err);
+// connecting the database
+let mongodb_url = 'mongodb+srv://adhogalgallo:uXxUdeqrE7LWgwFD@cluster0.wge4lfn.mongodb.net/?retryWrites=true&w=majority';
+let dbName = 'darkroom';
+mongoose.connect(`${mongodb_url}${dbName}`,{ useNewUrlParser: true , useUnifiedTopology: true }, (err)=>{
+    if (err) console.log(err)
 });
 
 const db = mongoose.connection;
