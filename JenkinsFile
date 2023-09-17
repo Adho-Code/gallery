@@ -1,25 +1,34 @@
 pipeline {
-    agent any
-    tools {
-        nodejs 'Nodejs' 
+  agent any
+  tools {
+    nodejs'Nodejs'
+  }
+  stages {
+    stage('clone repo') {
+      steps {
+        echo 'cloning repo'
+        git 'https://github.com/Adho-Code/gallery.git'
+      }
     }
-    stages {
-        stage('Clone repo') {
-            steps {
-                echo 'Cloning repo'
-                git 'https://github.com/Adho-Code/gallery.git'
-            }
-        }
-        stage('Install dependencies') {
-            steps {
-                echo 'Installing dependencies'
-                sh 'npm install'
-            }
-        }
-
+    stage('install dependancies') {
         steps {
-                echo 'Running tests'
-                sh 'npm test'
-            }
-        }
+          echo 'install dependancies'
+          sh 'npm install'
+      }
     }
+    stage('test') {
+        steps {
+          echo 'running test'
+          sh 'npm test'
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
