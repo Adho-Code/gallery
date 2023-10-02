@@ -16,7 +16,8 @@ describe('Photos', function () {
         expect(res).to.have.status(200);
         expect(res).to.be.html;
         expect(res.text).to.equal('Hello, World!'); // Assuming your root route sends this text
-        done();
+        done(); 
       });
   });
 });
+
